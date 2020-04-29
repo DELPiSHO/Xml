@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<osoby>
+<osoba plec="M">
+<imie>Eugene</imie>
+<nazwisko>Denisov</nazwisko>
+<adres>
+        <miejscowosc>Volkovysk</miejscowosc>
+        <ulica>Pankovoi</ulica>
+        <nr-domu>54</nr-domu>
+        </adres>
+<telefony>
+        <tel-stac>1477148</tel-stac>
+        <tel-kom>45871</tel-kom>
+</telefony>
+</osoba>
+<osoba plec="M">
+<imie>Vlad</imie>
+<nazwisko>Nedved</nazwisko>
+<adres>
+        <miejscowosc>Volkovysk</miejscowosc>
+        <ulica>Riabinovaya</ulica>
+        <nr-domu>11</nr-domu>
+        </adres>
+<telefony>
+        <tel-stac>1443161</tel-stac>
+        <tel-kom>99612</tel-kom>
+</telefony>
+</osoba>
+</osoby>

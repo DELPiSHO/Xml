@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hotel>
+        <pokoje>
+                <pokoj nr="1">
+                    <rodzaj>jednoosobowy</rodzaj>
+                </pokoj>
+                <pokoj nr="2">
+                        <rodzaj>dwuosobowy</rodzaj>
+						<wyposazenie>telewizor</wyposazenie>
+						<wyposazenie>mini bar</wyposazenie>
+                </pokoj>
+                <pokoj nr="3">
+                        <rodzaj>trzyosobowy</rodzaj>
+						<wyposazenie>telewizor</wyposazenie>
+						<wyposazenie>snooker</wyposazenie>
+						<wyposazenie>playstation 4</wyposazenie>						
+                </pokoj>
+        </pokoje>
+		
+		<osoby>
+			<osoba plec="M" zdjecie="zdj1.jpg">
+				<id>1</id>
+				<imie>Eugeniusz</imie>
+				<nazwisko>Denisow</nazwisko>
+				<dataUrodzenia>1998-05-17</dataUrodzenia>
+				<pesel>56789456754</pesel>
+				<email>delpisho@mail.ru</email>
+			</osoba>
+			<osoba plec="K" zdjecie="zdj2.jpg">
+				<id>2</id>
+				<imie>Anastazja</imie>
+				<nazwisko>Gorbaczewa</nazwisko>
+				<dataUrodzenia>1999-12-29</dataUrodzenia>
+				<pesel>98079685432</pesel>
+				<email>bestdotereu@mail.ru</email>
+			</osoba>
+			<osoba plec="M" zdjecie="zdj3.jpg">
+				<id>3</id>
+				<imie>Władysław</imie>
+				<nazwisko>Niedwiedzki</nazwisko>
+				<dataUrodzenia>1998-12-03</dataUrodzenia>
+				<pesel>50489450454</pesel>
+				<email>skif@mail.ru</email>
+			</osoba>
+		</osoby>
+			
+			
+        <wypozyczenia>
+                <wypozyczenie nrPokoju="1" idOsoby="3">
+                        <dataZameldowania>2018-04-01</dataZameldowania>
+                        <dataWymeldowania>2018-04-08</dataWymeldowania>
+						<cena>150.50</cena>
+                </wypozyczenie>
+                <wypozyczenie nrPokoju="2" idOsoby="1">
+                        <dataZameldowania>2018-04-15</dataZameldowania>
+                        <dataWymeldowania>2018-04-22</dataWymeldowania>
+						<cena>300</cena>
+                </wypozyczenie>
+                <wypozyczenie nrPokoju="3" idOsoby="1">
+                        <dataZameldowania>2018-03-09</dataZameldowania>
+                        <dataWymeldowania>2018-03-16</dataWymeldowania>
+						<cena>430</cena>
+                </wypozyczenie>
+                <wypozyczenie nrPokoju="3" idOsoby="2">
+                        <dataZameldowania>2018-03-09</dataZameldowania>
+                        <dataWymeldowania>2018-03-16</dataWymeldowania>
+						<cena>430</cena>
+                </wypozyczenie>
+        </wypozyczenia>
+</hotel>
+
+
+
+
+
+		
+
+
+
+
+	

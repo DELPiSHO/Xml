@@ -1,0 +1,48 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="dataUrType">
+  <xs:restriction base="xs:date">
+	<xs:minInclusive value="1900-01-01"/>
+    <xs:maxInclusive value="2018-05-01"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="emailType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[a-z0-9]+[@][a-z0-9]+[.][a-z]+"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="nrTelType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="([0-9]){9}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="plecType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="M" />
+        <xs:enumeration value="K" />
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="osobaType">
+    <xs:sequence>
+	  <xs:element type="xs:integer" name="id"/>
+      <xs:element type="xs:string" name="imie"/>
+      <xs:element type="xs:string" name="nazwisko"/>
+      <xs:element type="dataUrType" name="dataUr"/>
+      <xs:element type="nrTelType" name="nrTel"/>
+      <xs:element type="emailType" name="email"/>
+    </xs:sequence>
+    <xs:attribute name="plec" type="plecType"/>
+    <xs:attribute name="zdjecie" type="xs:string"/>
+  </xs:complexType>
+  
+   <xs:complexType name="osobyType">
+    <xs:sequence>
+      <xs:element type="osobaType" name="osoba" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  </xs:schema>

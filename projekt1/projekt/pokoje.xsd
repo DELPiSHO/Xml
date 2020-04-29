@@ -1,0 +1,41 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="iluOsobType">
+  <xs:restriction base="xs:integer">
+    <xs:minInclusive value="1"/>
+	<xs:maxInclusive value="4"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="numerType">
+	<xs:union>
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="1"/>
+				<xs:maxInclusive value="30"/>
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="101"/>
+				<xs:maxInclusive value="130"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:union>
+</xs:simpleType>
+
+<xs:complexType name="pokojType">
+    <xs:sequence>
+      <xs:element type="iluOsobType" name="iluOsob"/>
+      <xs:element type="xs:string" name="wyposazenie" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="nr" type="numerType"/>
+  </xs:complexType>
+  
+   <xs:complexType name="pokojeType">
+    <xs:sequence>
+      <xs:element type="pokojType" name="pokoj" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  </xs:schema>

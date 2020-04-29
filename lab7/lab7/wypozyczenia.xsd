@@ -1,0 +1,24 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:complexType name="wypozyczenieType">
+    <xs:sequence>
+      <xs:element type="xs:date" name="dataWypozyczenia"/>
+      <xs:element type="xs:date" name="dataZwrotu"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="idKasety" use="optional"/>
+  </xs:complexType>
+  
+  <xs:complexType name="wypozyczeniaType">
+    <xs:sequence>
+      <xs:element type="wypozyczenieType" name="wypozyczenie" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="wypozyczalniaType">
+    <xs:sequence>
+      <xs:element type="kasetyType" name="kasety"/>
+      <xs:element type="wypozyczeniaType" name="wypozyczenia"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

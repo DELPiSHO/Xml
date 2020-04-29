@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	
+<xsd:simpleType name="nazwatype">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="3"/>
+      <xsd:maxLength value="50"/>
+    </xsd:restriction>
+</xsd:simpleType>
+	
+ <xsd:simpleType name="rodzajtype">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="bombonierka" />
+        <xsd:enumeration value="czekolada" />
+        <xsd:enumeration value="cukierki" />
+        <xsd:enumeration value="pozostałe" />
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="liczbatype">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="10000"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="jednostkatype">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="sztuki" />
+        <xsd:enumeration value="kg" />
+        <xsd:enumeration value="dg" />
+        <xsd:enumeration value="g" />
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="restrcena">
+    <xsd:restriction base="xsd:decimal">
+		<xsd:fractionDigits value="2" />
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:complexType name="cenatype">
+    <xsd:simpleContent>
+		<xsd:extension base="restrcena">
+			<xsd:attribute name="jednostka" type="jednostkatype"/>
+		</xsd:extension>
+	</xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:simpleType name="kodtype">
+  <xsd:restriction base="xsd:string">
+    <xsd:pattern value="([0-9]){3}[\-][A-Z][\-]([C-Z0-9])+"/>
+    <xsd:pattern value="([0-9]){3}[\-]([A-Z]){2}[\-]([A-Z0-9]){5,10}"/>
+  </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="data-spozyciatype">
+  <xsd:restriction base="xsd:gYearMonth">
+	<xsd:minInclusive value="2018-04"/>
+  </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:complexType name="produkttype">
+  <xsd:sequence>
+    <xsd:element name="nazwa" type="nazwatype"/>
+    <xsd:element name="rodzaj" type="rodzajtype"/>
+    <xsd:element name="liczba" type="liczbatype"/>
+    <xsd:element name="cena" type="cenatype"/>
+    <xsd:element name="kod" type="kodtype"/>
+    <xsd:element name="data-spozycia" type="data-spozyciatype"/>
+  </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="czekoladatype">
+	<xsd:sequence>
+		<xsd:element name="produkt" type="produkttype" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="czekolada" type="czekoladatype"/>
+	
+</xsd:schema>

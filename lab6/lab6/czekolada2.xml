@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<czekolada>
+	<produkt>
+		<nazwa>Bombonierka Ra</nazwa> <!--dopisano rodzaj do nazwy-->
+		<rodzaj>bombonierka</rodzaj>
+		<liczba>50</liczba>
+		<cena jednostka="sztuki">9.99</cena>
+		<kod>532-N-23C5FXZ2889WTT452</kod> <!--usunieto 'A'-->
+		<data-spozycia>2018-04</data-spozycia> <!--zmieniono miesiac z 01-->
+	</produkt>
+	<produkt>
+		<nazwa>Milka Czekolada Mleczna 300g</nazwa>
+		<rodzaj>czekolada</rodzaj>
+		<liczba>100</liczba>
+		<cena jednostka="sztuki">12.23</cena>
+		<kod>318-AA-DRABT56</kod> <!--dodano "-AA"-->
+		<data-spozycia>2018-09</data-spozycia>
+	</produkt>
+	<produkt>
+		<nazwa>Cukierki Michałki</nazwa>
+		<rodzaj>cukierki</rodzaj> <!--bylo "smakołyk"-->
+		<liczba>10000</liczba> <!--usatwiono 9999999 na max-->
+		<cena jednostka="kg">25.60</cena><!--było "kilogram", zaokroglono 25.596 do 25.60-->
+		<kod>123-BB-55DTEAABB3</kod><!--zamieniono 22 na BB-->
+		<data-spozycia>2018-08</data-spozycia>
+	</produkt>
+</czekolada>

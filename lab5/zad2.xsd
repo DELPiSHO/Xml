@@ -1,0 +1,47 @@
+?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:simpleType name="stringtype">
+  <xsd:restriction base="xsd:string"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="indextype">
+  <xsd:restriction base="xsd:string">
+    <xsd:pattern value="[0-9]{6}"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="datetype">
+         <xsd:restriction base="xsd:date"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="floattype">
+<xsd:restriction base="xsd:float"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="URItype">
+<xsd:restriction base="xsd:anyURI"/>
+</xsd:simpleType>
+
+<xsd:complexType name="studentTYPE">
+         <xsd:sequence>
+                 <xsd:element name="nazwisko" type="stringtype"/>
+                 <xsd:element name="imie" type="stringtype"/>
+                 <xsd:element name="nrindeksu" type="indextype"/>
+                 <xsd:element name="dataurodzenia" type="datetype"/>
+                 <xsd:element name="sredniaocen" type="stringtype"/>
+                 <xsd:element name="stronadomowa" type="URItype"/>
+        </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="listaTYPE">
+        <xsd:sequence>
+                <xsd:element name="student" type="studentTYPE" maxOccurs="unbounded"/>
+                </xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="listastud" type="listaTYPE"/>
+</xsd:schema>
+
+
+

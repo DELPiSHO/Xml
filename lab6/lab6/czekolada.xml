@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<czekolada
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="czekolada.xsd">
+	<produkt>
+		<nazwa>Rafaello</nazwa>
+		<rodzaj>bombonierka</rodzaj>
+		<liczba>50</liczba>
+		<cena jednostka="sztuki">9.99</cena>
+		<kod>532-N-23C5FXZ2889WTT452</kod>
+		<data-spozycia>2018-06</data-spozycia>
+	</produkt>
+	<produkt>
+		<nazwa>Milka Czekolada Mleczna 300g</nazwa>
+		<rodzaj>czekolada</rodzaj>
+		<liczba>100</liczba>
+		<cena jednostka="sztuki">12.23</cena>
+		<kod>318-DR-ABT56</kod>
+		<data-spozycia>2018-05</data-spozycia>
+	</produkt>
+	<produkt>
+		<nazwa>Cukierki Michałki</nazwa>
+		<rodzaj>cukierki</rodzaj>
+		<liczba>10</liczba>
+		<cena jednostka="kg">25.59</cena>
+		<kod>123-AS-55DTEAABB3</kod>
+		<data-spozycia>2019-08</data-spozycia>
+	</produkt>
+</czekolada>

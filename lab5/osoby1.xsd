@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+        <!-- definition of simple elements -->
+
+        <xsd:element name="imie" type="xsd:string"/>
+        <xsd:element name="nazwisko" type="xsd:string"/>
+        <xsd:element name="miejscowosc" type="xsd:string"/>
+        <xsd:element name="ulica" type="xsd:string"/>
+        <xsd:element name="nr-domu" type="xsd:integer"/>
+        <xsd:element name="tel-stac" type="xsd:integer"/>
+        <xsd:element name="tel-kom" type="xsd:integer"/>
+
+        <!-- definition of attributes -->
+<xsd:attribute name="plec" type="xsd:string" />
+
+
+<!-- definition of complex elements -->
+<xsd:element name="telefony">
+<xsd:complexType>
+    <xsd:sequence>
+                <xsd:element ref="tel-stac"/>
+                <xsd:element ref="tel-kom"/>
+                        </xsd:sequence>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="adres">
+        <xsd:complexType>
+    <xsd:sequence>
+                <xsd:element ref="miejscowosc"/>
+                <xsd:element ref="ulica"/>
+                <xsd:element ref="nr-domu"/>
+        </xsd:sequence>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="osoba" >
+        <xsd:complexType>
+    <xsd:sequence>
+                <xsd:element name="imie"/>
+                <xsd:element name="nazwisko"/>
+                <xsd:element name="adres"/>
+                <xsd:element name="telefony"/>
+        </xsd:sequence>
+        <xsd:attribute ref="plec" use="required"/>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="osoby">
+        <xsd:complexType>
+    <xsd:sequence>
+                <xsd:element name="osoba" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                </xsd:complexType>
+</xsd:element>
+</xsd:schema>

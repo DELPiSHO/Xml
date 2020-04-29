@@ -1,0 +1,5 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="kasety3.xsd"/>
+    <xs:include schemaLocation="wypozyczenia.xsd"/>
+    <xs:element name="wypozyczalnia" type="wypozyczalniaType"/>
+</xs:schema>

@@ -1,0 +1,32 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="osoby.xsd"/>
+    <xs:include schemaLocation="pokoje.xsd"/>
+    <xs:include schemaLocation="wynajmy.xsd"/>
+    
+	<xs:complexType name="hotelType">
+		<xs:all>
+			<xs:element type="pokojeType" name="pokoje"/>
+			<xs:element type="osobyType" name="osoby"/>
+			<xs:element type="wynajmyType" name="wynajmy"/>
+		</xs:all>
+	</xs:complexType>
+    
+    <xs:element name="hotel" type="hotelType">
+		<xs:key name="osobyKey">
+			<xs:selector xpath="osoby/osoba"/>
+			<xs:field xpath="id"/>
+		</xs:key>	
+		<xs:keyref name="hotelOsobyKey" refer="osobyKey">
+			<xs:selector xpath="wynajmy/wynajem"/>
+			<xs:field xpath="@idOsoby"/>
+		</xs:keyref>
+		<xs:key name="pokojeKey">
+			<xs:selector xpath="pokoje/pokoj"/>
+			<xs:field xpath="@nr"/>
+		</xs:key>	
+		<xs:keyref name="hotelPokojeKey" refer="pokojeKey">
+			<xs:selector xpath="wynajmy/wynajem"/>
+			<xs:field xpath="@nrPokoju"/>
+		</xs:keyref>
+	</xs:element>
+</xs:schema>
